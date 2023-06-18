@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
         var cardContainer = document.querySelector('#cardContainer');
 
         var card = document.createElement('div');
-        card.className = "card mt-2 mx-4";
+        card.className = "card mt-4 mx-4";
         card.style.width = "600px";
+        card.style.transition = 'transform 0.3s ease';
 
         var cardBody = document.createElement('div');
         cardBody.className = "card-body";
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = item.picture.large;
 
         var div = document.createElement('div');
-        div.className = "ml-4";
+        div.className = "ml-4 text-light";
 
         var h5 = document.createElement('h5');
         h5.className = "card-title font-weight-bold ml-4";
@@ -117,6 +118,14 @@ document.addEventListener("DOMContentLoaded", function() {
         cardBody.appendChild(divButtons);
         card.appendChild(cardBody);
         cardContainer.appendChild(card);
+
+        card.addEventListener('mouseover', function() {
+            card.style.transform = 'scale(1.05)';
+        });
+
+        card.addEventListener('mouseout', function() {
+            card.style.transform = 'scale(1)';
+        });
     }
 
     function editCard(event) {
