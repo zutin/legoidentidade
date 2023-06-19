@@ -43,15 +43,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         var img = document.createElement('img');
         img.className = "mx-auto rounded-circle";
-        img.style.height = "8rem";
-        img.style.width = "16rem";
+        img.style.height = "11rem";
+        img.style.width = "14rem";
         img.src = item.picture.large;
 
         var div = document.createElement('div');
         div.className = "ml-4 text-light";
 
         var h5 = document.createElement('h5');
-        h5.className = "card-title font-weight-bold ml-4";
+        h5.className = "card-title fw-bold ml-4 text-center";
         h5.textContent = `${item.name.first} ${item.name.last}`;
 
         var dob = document.createElement('p');
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 data.results.forEach(function(item){
                     var newCardPass = document.createElement('div');
-                    newCardPass.className = "text-center";
+                    newCardPass.className = "text-center text-white";
                     newCardPass.innerHTML = `
                         <p><strong>Cadastro gerado com sucesso!</strong></p>
                         <p><strong>Login: </strong>${item.login.username}</p>
